@@ -10,7 +10,8 @@ Built with **C++23**, **Qt 6 / QML**, and **SQLite**. Runs quietly in the system
 [![Platform](https://img.shields.io/badge/platform-Linux%20(X11)-informational)](#requirements)
 [![Built with](https://img.shields.io/badge/built%20with-C%2B%2B23%20%7C%20Qt6%20%7C%20SQLite-6a5acd)](#build--package-contributors)
 
-[Features](#-features) • [Install](#-installation) • [Usage](#-usage) • [Build from Source](#-build--package-contributors) • [Troubleshooting](#-troubleshooting)
+[Features](#features) • [Install](#installation) • [Usage](#usage) • [Build from Source](#build--package-contributors)
+
 
 </div>
 
