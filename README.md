@@ -1,78 +1,74 @@
-# Clipboard History
+<div align="center">
 
-A lightweight, native **Clipboard History** app for Linux that brings the familiar
-*Windows clipboard history* experience to your desktop. Built from scratch with
-**C++23**, **Qt 6 / QML**, and **SQLite**, it runs as a background tray app and
-opens a fast, searchable overlay popup with the `Ctrl+Alt+V` global hotkey.
+# 🗂️ Clipboard History
+
+**A lightweight, native clipboard history manager for Linux - the familiar Windows clipboard experience, reimagined for your desktop.**
+
+Built with **C++23**, **Qt 6 / QML**, and **SQLite**. Runs quietly in the system tray and opens a fast, searchable overlay with a single hotkey: **`Ctrl+Alt+V`**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Linux%20(X11)-informational)](#requirements)
+[![Built with](https://img.shields.io/badge/built%20with-C%2B%2B23%20%7C%20Qt6%20%7C%20SQLite-6a5acd)](#build--package-contributors)
 
-> The product/application **name** is **Clipboard History**; the window and tray
-> title is **Clipboard**.
+[Features](#-features) • [Install](#-installation) • [Usage](#-usage) • [Build from Source](#-build--package-contributors) • [Troubleshooting](#-troubleshooting)
 
----
+</div>
 
-## Features
-
-- **Instant access** — `Ctrl+Alt+V` opens a Windows-style clipboard popup anywhere
-  on the screen, positioned near the pointer.
-- **True popup window** — override-redirect, always-on-top, and **not** present in
-  the taskbar or the Alt+Tab list.
-- **Keyboard-first navigation** — while the popup is open, the arrow keys move the
-  selection, typing filters the history, and `Enter` pastes the selected item.
-- **Real paste injection** — pasting writes the item to the system clipboard, closes
-  the popup, restores focus to the app you were using, then injects a genuine
-  `Ctrl+V` keystroke so the item lands in your document.
-- **Click to paste** — click any row with the mouse and it is pasted immediately.
-- **Search as you type** — type to filter; `Backspace` edits the query.
-- **Images** — copied images and image files copied from the file manager
-  (Nautilus/Caja/Files) are saved automatically and shown as thumbnails; pasting
-  an image item puts the image back on the clipboard.
-- **Text & rich text** — both are captured and displayed with a clean preview.
-- **Pin items** — star a row to pin it; pinned rows are never removed by
-  **Clear all**.
-- **Clear all** — one click clears the whole unpinned history (with a confirmation
-  dialog); pinned items stay.
-- **Duplicate detection** — copying something already in the history moves it to the
-  top instead of adding a duplicate.
-- **Persistent history** — everything is stored in a SQLite database and survives
-  restarts.
-- **System tray** — the app keeps running in the background; the tray menu opens the
-  popup or quits.
-- **Focus management** — the popup takes keyboard focus while open and returns it to
-  your previous window when dismissed.
+> **Note:** The product name is **Clipboard History**; the tray/window title is **Clipboard**.
 
 ---
 
-## Requirements
+## ✨ Features
 
-- A **64-bit (amd64)** Debian-based distribution: Debian **12+**, Ubuntu **22.04+**,
-  Linux Mint **21+**.
-- An **X11** session for the global hotkey, popup focus handling and paste injection.
-
-> **Wayland note:** the native hotkey and popup focus handling require X11. On Wayland
-> the app can still run from the tray, but the full overlay experience is limited.
-> `Ctrl+Alt+V` works on X11, including XWayland sessions.
+| | |
+|---|---|
+| ⚡ **Instant access** | Open a Windows-style clipboard popup anywhere on screen with `Ctrl+Alt+V`, positioned near your cursor. |
+| 🪟 **True popup window** | Override-redirect, always-on-top, and hidden from the taskbar and Alt+Tab list. |
+| ⌨️ **Keyboard-first navigation** | Arrow keys to select, type to filter, `Enter` to paste - no mouse required. |
+| 🖱️ **Click to paste** | Click any row and it's pasted instantly. |
+| 🔁 **Real paste injection** | Places the item on the clipboard, restores focus to your previous app, and injects a genuine `Ctrl+V`. |
+| 🔍 **Search as you type** | Instantly filter your history; `Backspace` refines the query. |
+| 🖼️ **Image support** | Copied images - and image files copied from Nautilus/Caja/Files - are saved and shown as thumbnails. |
+| 📝 **Text & rich text** | Both are captured and rendered with a clean preview. |
+| 📌 **Pin items** | Star important entries so **Clear all** never touches them. |
+| 🧹 **Clear all** | One click clears unpinned history, with a confirmation dialog. |
+| 🧬 **Duplicate detection** | Re-copying an existing item bumps it to the top instead of duplicating it. |
+| 💾 **Persistent history** | Everything is stored in a local SQLite database and survives restarts. |
+| 🧰 **System tray integration** | Runs quietly in the background; the tray menu opens the popup or quits the app. |
+| 🎯 **Focus management** | The popup takes keyboard focus while open and hands it back when dismissed. |
 
 ---
 
-## Install from .deb
+## 📋 Requirements
 
-Download `clipboard-history_<version>_amd64.deb` from the
-[Releases](https://github.com/ogtamimi/clipboard-history/releases) page.
+- A **64-bit (amd64)** Debian-based distribution:
+  - Debian **12+**
+  - Ubuntu **22.04+**
+  - Linux Mint **21+**
+- An **X11** session - required for the global hotkey, popup focus handling, and paste injection.
 
-### Option A — double click
+> **⚠️ Wayland note:** the native hotkey and popup focus handling require X11. On Wayland, the app can still run from the tray, but the full overlay experience is limited. `Ctrl+Alt+V` works on X11, including XWayland sessions.
 
-1. **Download** the `.deb` file.
-2. **Double click** it — the package manager (Software Manager / GDebi) opens.
+---
+
+## 📦 Installation
+
+### Download the latest release
+
+Grab `clipboard-history_1.0.0_amd64.deb` from the **[v1.0.0 Release page](https://github.com/ogtamimi/clipboard-history/releases/tag/v1.0.0)**.
+
+### Option A - Double-click install
+
+1. **Download** the `.deb` file from the release page above.
+2. **Double-click** it to open your package manager (Software Manager / GDebi).
 3. Click **Install** and enter your password.
-4. Launch **Clipboard History** from the Applications menu.
-5. Press **Ctrl+Alt+V** to open the history popup.
+4. Launch **Clipboard History** from your Applications menu.
+5. Press **`Ctrl+Alt+V`** to open the history popup.
 
-### Option B — terminal
+### Option B - Terminal install
 
 ```bash
-sudo apt install ./clipboard-history_<version>_amd64.deb
+sudo apt install ./clipboard-history_1.0.0_amd64.deb
 ```
 
 Then launch it (or find it in the Applications menu):
@@ -81,86 +77,110 @@ Then launch it (or find it in the Applications menu):
 clipboard-history
 ```
 
-It starts in the background with a system tray icon and **starts automatically
-at every login** (the package installs an autostart entry). Open the popup with
-**Ctrl+Alt+V**; use the tray menu to open or quit.
+The app starts in the background with a tray icon and **launches automatically at every login** (an autostart entry is installed for you). Open the popup anytime with **`Ctrl+Alt+V`**, or use the tray menu.
 
-> The package is built for **amd64** only. On other architectures, build from
-> source instead.
+> 📌 The `.deb` package targets **amd64** only. For other architectures, build from source - see below.
 
-### Uninstall
+### Updating
 
-```bash
-sudo apt remove clipboard-history
-```
-
-This removes the program, menu entries, icons and autostart entry. Your personal
-history database in `~/.local/share` is kept.
-
-### Update / upgrade
-
-Install the new `.deb` the same way you installed the first one:
+Install the newer `.deb` the same way you installed the first one:
 
 ```bash
 sudo apt install ./clipboard-history_<new-version>_amd64.deb
 ```
 
-The new version replaces the old one cleanly; your history is untouched.
+The update replaces the old version cleanly and keeps your existing clipboard history intact.
+
+### Uninstalling
+
+```bash
+sudo apt remove clipboard-history
+```
+
+This removes the program, menu entries, icons, and the autostart entry. Your personal history database under `~/.local/share` is preserved.
 
 ---
 
-## Build & package (contributors)
+## 🖱️ Usage
 
-End users don't need this section — it's for people building from source.
+Open the popup with **`Ctrl+Alt+V`** (or from the tray icon), then:
 
-### Manual dependencies
+| Action | How |
+|---|---|
+| Open / hide popup | `Ctrl+Alt+V`, or click the tray icon |
+| Select an item | `↑` / `↓`, or click a row |
+| Paste selected item | `Enter`, or **click** any row |
+| Search / filter | Type while the popup is open; `Backspace` to edit |
+| Pin / unpin an item | Click the **★** button on the row (★ = pinned, ☆ = not pinned) |
+| Clear unpinned history | **Clear all** button (top right), then confirm |
+| Hide the popup | `Escape`, the **×** button, an outside click, or `Ctrl+Alt+V` again |
 
-Installing a `.deb` pulls in everything automatically. To build from source, run:
+**What happens when you paste:**
+
+1. The item is placed on the system clipboard and moved to the top of the history.
+2. The popup closes.
+3. Focus returns to the application you were using.
+4. A real **`Ctrl+V`** keystroke is injected so the content actually appears.
+
+---
+
+## 🗄️ Data Location
+
+Your clipboard history lives in a local SQLite database - nothing is sent anywhere:
+
+```text
+~/.local/share/Clipboard History/Clipboard/clipboard-history.db
+```
+
+Copied images are stored alongside it:
+
+```text
+~/.local/share/Clipboard History/Clipboard/images/
+```
+
+---
+
+## 🛠️ Build & Package (Contributors)
+
+> End users don't need this section - it's for people building the project from source.
+
+### 1. Install build dependencies
 
 ```bash
 chmod +x install-dependencies.sh
 ./install-dependencies.sh
 ```
 
-(this installs `cmake`, a C++ compiler, Qt 6 development packages, X11/XTest
-headers, QML modules and the SQLite driver).
+This installs `cmake`, a C++ compiler, Qt 6 development packages, X11/XTest headers, the required QML modules, and the SQLite driver.
 
-### Build a .deb (recommended)
+### 2. Build a `.deb` package (recommended)
 
 ```bash
 ./build-deb.sh
 ```
 
-The package is written to:
+The resulting package is written to:
 
 ```text
 dist/clipboard-history_<version>_amd64.deb
 ```
 
-The `<version>` comes from the single version source, `CMakeLists.txt`
-(`project(ClipboardHistory VERSION x.y.z)`).
+The `<version>` is derived from the single source of truth in `CMakeLists.txt`:
+`project(ClipboardHistory VERSION x.y.z)`.
 
-### Build in place
+### 3. Or build and run in place
 
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j"$(nproc)"
-```
-
-Run the resulting binary:
-
-```bash
 ./build/clipboard-history
 ```
 
-> While the popup is open it takes keyboard focus (like Windows clipboard history),
-> so you can't type into the app behind it until it's dismissed.
+> 💡 While the popup is open, it takes keyboard focus (just like Windows clipboard history) - so you can't type into the app behind it until it's dismissed.
 
 ### Continuous delivery
 
-A [GitHub Actions workflow](.github/workflows/release.yml) builds
-`clipboard-history_<version>_amd64.deb` automatically whenever a `v*` tag is
-pushed; the package is attached to a GitHub Release. Example:
+A [GitHub Actions workflow](.github/workflows/release.yml) automatically builds `clipboard-history_<version>_amd64.deb` whenever a `v*` tag is pushed, and attaches it to a GitHub Release:
 
 ```bash
 git tag v1.0.0
@@ -169,66 +189,21 @@ git push origin v1.0.0
 
 ### Package contents & metadata
 
-The `.deb` installs:
-
 | Item | Location |
-|------|----------|
+|---|---|
 | Executable | `/usr/bin/clipboard-history` |
 | Application menu entry | `/usr/share/applications/clipboard-history.desktop` |
 | Autostart entry | `/etc/xdg/autostart/clipboard-history.desktop` |
 | Icon | `/usr/share/icons/hicolor/scalable/apps/clipboard-history.svg` |
 | License | `/usr/share/doc/clipboard-history/copyright` |
 
-The package declares its dependencies (`libqt6*`, `libx11-6`, `libxtst6`,
-QML modules, SQLite driver), so `apt` resolves every library automatically on
-Debian 12 / Ubuntu 22.04+ / Linux Mint 21+.
+The package declares all its dependencies (`libqt6*`, `libx11-6`, `libxtst6`, QML modules, the SQLite driver), so `apt` resolves every library automatically on Debian 12 / Ubuntu 22.04+ / Linux Mint 21+.
 
 ---
 
-## Usage
+## 🧪 Tests
 
-Open the popup with **Ctrl+Alt+V** (or from the system tray), then:
-
-| Action | How |
-|---|---|
-| Open / hide popup | `Ctrl+Alt+V`, or click the tray icon |
-| Select item | `↑` / `↓`, or click a row |
-| Paste selected item | `Enter`, or **click** any row |
-| Search / filter | type while the popup is open; `Backspace` to edit |
-| Pin / unpin item | click the **★** button on the row (★ = pinned, ☆ = not) |
-| Clear unpinned history | **Clear all** button (top right), then confirm |
-| Hide popup | `Escape`, the **×** button, an outside click, or `Ctrl+Alt+V` again |
-
-Pasting performs these four steps:
-
-1. the item is placed on the system clipboard and moved to the top of the history,
-2. the popup closes,
-3. focus returns to the app you were using, and
-4. a real **Ctrl+V** keystroke is injected so the text actually appears.
-
----
-
-## Data location
-
-History is stored in a SQLite database:
-
-```text
-~/.local/share/Clipboard History/Clipboard/clipboard-history.db
-```
-
-Copied images are saved next to it, in:
-
-```text
-~/.local/share/Clipboard History/Clipboard/images/
-```
-
----
-
-## Tests
-
-An integration harness drives a **running instance** over X11 and verifies the popup
-end to end: popup properties, keyboard focus, paste delivery, focus restoration,
-`Escape` dismissal, hotkey toggling, and outside-click dismissal.
+An integration harness drives a **running instance** over X11 and verifies the popup end to end - properties, keyboard focus, paste delivery, focus restoration, `Escape` dismissal, hotkey toggling, and outside-click dismissal.
 
 ```bash
 cmake --build build -j"$(nproc)"
@@ -236,38 +211,39 @@ CLIPBOARD_DEBUG=1 ./build/clipboard-history &
 python3 tests/integration_harness.py
 ```
 
-It exits `0` when every check passes. It needs `python3-tk`, `python3-xlib`, and the
-`xwininfo` utility on the same X11 display.
+The suite exits `0` when every check passes. It requires `python3-tk`, `python3-xlib`, and the `xwininfo` utility on the same X11 display.
 
 ---
 
-## Troubleshooting
+## 🩺 Troubleshooting
 
-### `module "QtQuick" is not installed`
+<details>
+<summary><strong>module "QtQuick" is not installed</strong></summary>
 
-With the `.deb`, `apt` installs the QML modules automatically. For source builds,
-`./install-dependencies.sh` covers this; restart the app afterwards.
+With the `.deb`, `apt` installs the required QML modules automatically. For source builds, `./install-dependencies.sh` covers this - restart the app afterwards.
+</details>
 
-### `Ctrl+Alt+V` does not open the popup
+<details>
+<summary><strong><code>Ctrl+Alt+V</code> doesn't open the popup</strong></summary>
 
-The global shortcut requires an X11 session (see the Wayland note). Some desktop
-environments reserve `Ctrl+Alt+V` or block global shortcuts; you can always open the
-popup from the tray icon instead.
+The global shortcut requires an X11 session (see the [Wayland note](#-requirements)). Some desktop environments reserve `Ctrl+Alt+V` or block global shortcuts entirely - you can always open the popup from the tray icon instead.
+</details>
 
-### The app disappears after clicking `×`
+<details>
+<summary><strong>The app disappears after clicking ×</strong></summary>
 
-This is intentional. The `×` button hides the panel while the background process
-keeps running. Reopen it with `Ctrl+Alt+V` or from the tray.
+This is intentional. The **×** button hides the panel while the background process keeps running. Reopen it with `Ctrl+Alt+V` or from the tray.
+</details>
 
-### Paste does not insert text
+<details>
+<summary><strong>Paste doesn't insert text</strong></summary>
 
-Paste injects a real `Ctrl+V` via XTest, which a few applications deliberately ignore.
-The selected item is still placed on the system clipboard, so a manual `Ctrl+V` pastes
-it.
+Paste injects a real `Ctrl+V` via XTest, which a few applications deliberately ignore. The selected item is still placed on the system clipboard, so a manual `Ctrl+V` will paste it.
+</details>
 
 ---
 
-## Project structure
+## 📁 Project Structure
 
 ```text
 clipboard-history/
@@ -291,7 +267,16 @@ clipboard-history/
 
 ---
 
-## License
+## 📄 License
 
-[MIT](LICENSE) © 2026 Ogtamimi. The implementation contains no proprietary assets
-or branding — "Windows clipboard history" refers only to the user-interface concept.
+Released under the **[MIT License](LICENSE)** © 2026 Ogtamimi.
+
+The implementation contains no proprietary assets or branding - "Windows clipboard history" refers only to the user-interface concept.
+
+---
+
+<div align="center">
+
+Made with ❤️ for the Linux desktop.
+
+</div>
