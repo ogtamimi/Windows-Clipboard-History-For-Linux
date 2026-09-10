@@ -1,8 +1,6 @@
 <div align="center">
 
-# 📋 Clipboard History
-
-**A lightweight, native clipboard history manager for Linux - the familiar Windows clipboard experience, reimagined for your desktop.**
+<img src="Assets/clipboard-history.svg" alt="Clipboard History">
 
 Runs quietly in the system tray and opens a fast, searchable overlay with a single hotkey: **`Ctrl+Alt+V`**.
 
