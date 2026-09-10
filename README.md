@@ -13,6 +13,9 @@ Runs quietly in the system tray and opens a fast, searchable overlay with a sing
 [Features](#features) • [Install](#installation) • [Usage](#usage) • [Build from Source](#build--package-contributors)
 
 
+  <img src="Assets/Screenshot.png" alt="Clipboard History Screenshot">
+
+
 </div>
 
 
