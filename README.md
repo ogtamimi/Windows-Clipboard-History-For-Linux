@@ -113,8 +113,32 @@ On X11 press **Ctrl+Alt+V** to open the popup.
 sudo cmake --install build
 ```
 
-This copies the executable to `/usr/local/bin`, creates a **.desktop** entry and
-installs the SVG icon.
+This copies the executable to `/usr/local/bin`, creates a **.desktop** entry,
+installs the SVG icon, **and adds an autostart entry** (see below).
+
+### Start automatically at login
+
+Clipboard History can start by itself as soon as you log in. Two ways:
+
+- **System-wide (requires install):** `sudo cmake --install build` writes an
+  autostart entry to `/etc/xdg/autostart`, so every user session starts it.
+- **Per user (no admin rights):**
+
+  ```bash
+  ./install-autostart.sh
+  ```
+
+  This installs `~/.config/autostart/clipboard-history.desktop` and prefers the
+  freshly built `build/clipboard-history` binary (falling back to the
+  system-installed `clipboard-history`).
+
+The app starts in the background and is ready for `Ctrl+Alt+V` at your next
+login. To disable autostart, remove the entry:
+
+```bash
+rm ~/.config/autostart/clipboard-history.desktop          # per user
+sudo rm /etc/xdg/autostart/clipboard-history.desktop      # system-wide
+```
 
 ---
 
@@ -210,8 +234,9 @@ issue.
 
 ```text
 clipboard-history/
-├── CMakeLists.txt              # Build configuration (Qt 6, C++23)
+├── CMakeLists.txt              # Build configuration (Qt 6, C++23) + install rules
 ├── install-dependencies.sh     # apt helper for runtime packages
+├── install-autostart.sh        # enable per-user autostart at login
 ├── qml/
 │   └── Main.qml                # Popup UI (header, search, list, dialogs)
 ├── resources/

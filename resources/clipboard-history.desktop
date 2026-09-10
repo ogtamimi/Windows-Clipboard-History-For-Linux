@@ -8,3 +8,4 @@ Icon=clipboard-history
 Categories=Utility;System;
 StartupNotify=true
 Terminal=false
+X-GNOME-Autostart-enabled=true

@@ -77,6 +77,7 @@ ApplicationWindow {
                 leftPadding: 36
                 rightPadding: 12
                 font.pixelSize: 13
+                color: "#000000"
                 onTextChanged: clipboardModel.setFilter(text)
                 Keys.onPressed: (event) => {
                     if (event.key === Qt.Key_Up || event.key === Qt.Key_Down) {
