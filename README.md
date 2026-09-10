@@ -4,7 +4,7 @@
 
 **A lightweight, native clipboard history manager for Linux - the familiar Windows clipboard experience, reimagined for your desktop.**
 
-Built with **C++23**, **Qt 6 / QML**, and **SQLite**. Runs quietly in the system tray and opens a fast, searchable overlay with a single hotkey: **`Ctrl+Alt+V`**.
+Runs quietly in the system tray and opens a fast, searchable overlay with a single hotkey: **`Ctrl+Alt+V`**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Linux%20(X11)-informational)](#requirements)
