@@ -44,6 +44,7 @@ Runs quietly in the system tray and opens a fast, searchable overlay with a sing
   <img src="Assets/Screenshot.png" alt="Clipboard History Screenshot">
 
 </div>
+
 ---
 
 ## Requirements
