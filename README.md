@@ -13,9 +13,6 @@ Runs quietly in the system tray and opens a fast, searchable overlay with a sing
 [Features](#features) • [Install](#installation) • [Usage](#usage) • [Build from Source](#build--package-contributors)
 
 
-  <img src="Assets/Screenshot.png" alt="Clipboard History Screenshot">
-
-
 </div>
 
 
@@ -40,6 +37,13 @@ Runs quietly in the system tray and opens a fast, searchable overlay with a sing
 | 🧰 **System tray integration** | Runs quietly in the background; the tray menu opens the popup or quits the app. |
 | 🎯 **Focus management** | The popup takes keyboard focus while open and hands it back when dismissed. |
 
+
+
+<div align="center">
+
+  <img src="Assets/Screenshot.png" alt="Clipboard History Screenshot">
+
+</div>
 ---
 
 ## Requirements
