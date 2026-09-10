@@ -1,0 +1,33 @@
+# Build output
+/build*/
+/cmake-build-*/
+
+# Qt / CMake artifacts
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+*.autosave
+Makefile
+cmake_install.cmake
+*.rcc
+
+# Compiled objects
+*.o
+*.obj
+*.so
+*.a
+
+# Python
+__pycache__/
+*.pyc
+
+# Local data (clipboard history database and copied images)
+*.db
+*.db-shm
+*.db-wal
+images/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.user

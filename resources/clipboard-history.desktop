@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Clipboard
+GenericName=Clipboard History
+Comment=Windows-style clipboard history for Linux
+Exec=clipboard-history
+Icon=clipboard-history
+Categories=Utility;System;
+StartupNotify=true
+Terminal=false
