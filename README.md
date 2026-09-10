@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🗂️ Clipboard History
+# 📋 Clipboard History
 
 **A lightweight, native clipboard history manager for Linux - the familiar Windows clipboard experience, reimagined for your desktop.**
 
@@ -14,11 +14,10 @@ Built with **C++23**, **Qt 6 / QML**, and **SQLite**. Runs quietly in the system
 
 </div>
 
-> **Note:** The product name is **Clipboard History**; the tray/window title is **Clipboard**.
 
 ---
 
-## ✨ Features
+## Features
 
 | | |
 |---|---|
@@ -28,7 +27,7 @@ Built with **C++23**, **Qt 6 / QML**, and **SQLite**. Runs quietly in the system
 | 🖱️ **Click to paste** | Click any row and it's pasted instantly. |
 | 🔁 **Real paste injection** | Places the item on the clipboard, restores focus to your previous app, and injects a genuine `Ctrl+V`. |
 | 🔍 **Search as you type** | Instantly filter your history; `Backspace` refines the query. |
-| 🖼️ **Image support** | Copied images - and image files copied from Nautilus/Caja/Files - are saved and shown as thumbnails. |
+| 🖼️ **Image support** | Copied images - images are saved and shown as thumbnails. |
 | 📝 **Text & rich text** | Both are captured and rendered with a clean preview. |
 | 📌 **Pin items** | Star important entries so **Clear all** never touches them. |
 | 🧹 **Clear all** | One click clears unpinned history, with a confirmation dialog. |
@@ -39,7 +38,7 @@ Built with **C++23**, **Qt 6 / QML**, and **SQLite**. Runs quietly in the system
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 - A **64-bit (amd64)** Debian-based distribution:
   - Debian **12+**
@@ -51,7 +50,7 @@ Built with **C++23**, **Qt 6 / QML**, and **SQLite**. Runs quietly in the system
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Download the latest release
 
@@ -79,7 +78,7 @@ clipboard-history
 
 The app starts in the background with a tray icon and **launches automatically at every login** (an autostart entry is installed for you). Open the popup anytime with **`Ctrl+Alt+V`**, or use the tray menu.
 
-> 📌 The `.deb` package targets **amd64** only. For other architectures, build from source - see below.
+> The `.deb` package targets **amd64** only. For other architectures, build from source - see below.
 
 ### Updating
 
@@ -101,7 +100,7 @@ This removes the program, menu entries, icons, and the autostart entry. Your per
 
 ---
 
-## 🖱️ Usage
+## Usage
 
 Open the popup with **`Ctrl+Alt+V`** (or from the tray icon), then:
 
@@ -124,7 +123,7 @@ Open the popup with **`Ctrl+Alt+V`** (or from the tray icon), then:
 
 ---
 
-## 🗄️ Data Location
+## Data Location
 
 Your clipboard history lives in a local SQLite database - nothing is sent anywhere:
 
@@ -140,7 +139,7 @@ Copied images are stored alongside it:
 
 ---
 
-## 🛠️ Build & Package (Contributors)
+## Build & Package (Contributors)
 
 > End users don't need this section - it's for people building the project from source.
 
@@ -176,7 +175,7 @@ cmake --build build -j"$(nproc)"
 ./build/clipboard-history
 ```
 
-> 💡 While the popup is open, it takes keyboard focus (just like Windows clipboard history) - so you can't type into the app behind it until it's dismissed.
+> While the popup is open, it takes keyboard focus (just like Windows clipboard history) - so you can't type into the app behind it until it's dismissed.
 
 ### Continuous delivery
 
@@ -201,7 +200,7 @@ The package declares all its dependencies (`libqt6*`, `libx11-6`, `libxtst6`, QM
 
 ---
 
-## 🧪 Tests
+## Tests
 
 An integration harness drives a **running instance** over X11 and verifies the popup end to end - properties, keyboard focus, paste delivery, focus restoration, `Escape` dismissal, hotkey toggling, and outside-click dismissal.
 
@@ -215,35 +214,8 @@ The suite exits `0` when every check passes. It requires `python3-tk`, `python3-
 
 ---
 
-## 🩺 Troubleshooting
 
-<details>
-<summary><strong>module "QtQuick" is not installed</strong></summary>
-
-With the `.deb`, `apt` installs the required QML modules automatically. For source builds, `./install-dependencies.sh` covers this - restart the app afterwards.
-</details>
-
-<details>
-<summary><strong><code>Ctrl+Alt+V</code> doesn't open the popup</strong></summary>
-
-The global shortcut requires an X11 session (see the [Wayland note](#-requirements)). Some desktop environments reserve `Ctrl+Alt+V` or block global shortcuts entirely - you can always open the popup from the tray icon instead.
-</details>
-
-<details>
-<summary><strong>The app disappears after clicking ×</strong></summary>
-
-This is intentional. The **×** button hides the panel while the background process keeps running. Reopen it with `Ctrl+Alt+V` or from the tray.
-</details>
-
-<details>
-<summary><strong>Paste doesn't insert text</strong></summary>
-
-Paste injects a real `Ctrl+V` via XTest, which a few applications deliberately ignore. The selected item is still placed on the system clipboard, so a manual `Ctrl+V` will paste it.
-</details>
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```text
 clipboard-history/
@@ -267,7 +239,7 @@ clipboard-history/
 
 ---
 
-## 📄 License
+## License
 
 Released under the **[MIT License](LICENSE)** © 2026 Ogtamimi.
 
