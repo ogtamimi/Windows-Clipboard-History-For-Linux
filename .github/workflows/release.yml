@@ -1,0 +1,51 @@
+name: Build Debian package (.deb)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq \
+            cmake \
+            g++ \
+            qt6-base-dev \
+            qt6-declarative-dev \
+            libqt6sql6-sqlite \
+            qml6-module-qtquick \
+            qml6-module-qtquick-controls \
+            qml6-module-qtquick-layouts \
+            libx11-dev \
+            libxtst-dev
+
+      - name: Build .deb
+        run: ./build-deb.sh
+
+      - name: Show package metadata
+        run: dpkg-deb --info dist/*.deb | head -20
+
+      - name: Upload .deb artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb
+          path: dist/*.deb
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/*.deb
+          generate_release_notes: true

@@ -219,7 +219,8 @@ int main(int argc, char *argv[]) {
     app.setApplicationName(QStringLiteral("Clipboard"));
     app.setApplicationDisplayName(QStringLiteral("Clipboard"));
     app.setOrganizationName(QStringLiteral("Clipboard History"));
-    const QIcon icon = QIcon::fromTheme(QStringLiteral("edit-paste"));
+    QIcon icon = QIcon::fromTheme(QStringLiteral("clipboard-history"));
+    if (icon.isNull()) icon = QIcon::fromTheme(QStringLiteral("edit-paste"));
     app.setWindowIcon(icon);
 
     ClipboardModel model;

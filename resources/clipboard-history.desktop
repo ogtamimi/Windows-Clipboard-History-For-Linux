@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
-Name=Clipboard
+Name=Clipboard History
 GenericName=Clipboard History
 Comment=Windows-style clipboard history for Linux
 Exec=clipboard-history
 Icon=clipboard-history
-Categories=Utility;System;
+Categories=Utility;
 StartupNotify=true
 Terminal=false
 X-GNOME-Autostart-enabled=true

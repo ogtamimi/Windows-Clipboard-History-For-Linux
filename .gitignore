@@ -21,6 +21,11 @@ cmake_install.cmake
 __pycache__/
 *.pyc
 
+# Debian packaging output (see build-deb.sh)
+/dist/
+/build-deb/
+*.deb
+
 # Local data (clipboard history database and copied images)
 *.db
 *.db-shm
